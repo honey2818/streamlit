@@ -15,7 +15,7 @@ if "chat" not in st.session_state:
     st.session_state.chat = []
 
 
-for m in st.
+for m in st.session_state.chat:
     st.chat_message(m["role"]).write(m["content"])
 
 
@@ -35,8 +35,3 @@ if prompt:
     reply = res.choices[0].message.content
     st.session_state.chat.append({"role":"assistant","content":reply})
     st.rerun()
-
-
-
-
-
